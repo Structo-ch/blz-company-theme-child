@@ -1,4 +1,3 @@
-
 .category-blz .product-category > a {
     display: block;
     text-align: center;
@@ -7,4 +6,9 @@
 
 .category-blz.elementor-widget-wc-categories .woocommerce .woocommerce-loop-category__title {
     color: inherit;
+}
+
+.elementor-shortcode > .elementor {
+    display: flex;
+    flex-direction: row;
 }
