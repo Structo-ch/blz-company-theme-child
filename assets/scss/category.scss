@@ -1,9 +1,17 @@
-.category-blz .product-category > a {
-    display: block;
+.elementor-products-grid ul.products.elementor-grid li.product {
     text-align: center;
+    min-height: 26.875em;    
+}
+
+.category-blz .product-category>a {
+    display: block;
+    flex: 1;
+    display: flex;
+    align-items: center;
     padding-block: 5em;
 }
 
 .category-blz.elementor-widget-wc-categories .woocommerce .woocommerce-loop-category__title {
+    flex: 1;
     color: inherit;
 }

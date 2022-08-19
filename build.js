@@ -15,7 +15,6 @@ esbuild.build({
             return css
           }
         }),
-        //...
       ],
     outfile: 'dist/app.js'
 })

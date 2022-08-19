@@ -1,4 +1,6 @@
 body 
 {
-    --swiper-pagination-color: --e-global-color-af67724;
+    --swiper-pagination-color: var(--e-global-color-af67724);
+    --swiper-navigation-color: var(--e-global-color-af67724);
+    --button-align-display: flex
 }
