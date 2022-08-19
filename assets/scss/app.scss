@@ -1,14 +1,6 @@
-.category-blz .product-category > a {
-    display: block;
-    text-align: center;
-    padding-block: 5em;
-}
+@import 'variables';
 
-.category-blz.elementor-widget-wc-categories .woocommerce .woocommerce-loop-category__title {
-    color: inherit;
-}
+@import 'category';
 
-.elementor-shortcode > .elementor {
-    display: flex;
-    flex-direction: row;
-}
+@import 'shortcode';
+
