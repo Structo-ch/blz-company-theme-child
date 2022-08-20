@@ -110,3 +110,17 @@ function woocommerce_check_cart_quantities()
 	if (($total_products % $multiples) > 0 && $found)
 		wc_add_notice(sprintf(__('You need to buy in quantities of %s products', 'woocommerce'), $multiples), 'error');
 }
+
+add_action('woocommerce_before_quantity_input_field', 'woocommerce_before_quantity_input_field_action');
+
+/**
+ * Function for `woocommerce_before_quantity_input_field` action-hook.
+ * 
+ * @return void
+ */
+function woocommerce_before_quantity_input_field_action()
+{ ?>
+	<div class="quantity-button quantity-down">-</div>
+	<div class="quantity-button quantity-up">+</div>
+<?php
+}
