@@ -47,7 +47,7 @@ if (NodeSwiperContainer.length > 0) {
   });
 }
 
-const funcQuerySelectorQuantity = (selector) => (isSubmittable) => {
+const funcQuerySelectorQuantity = (selector) => {
   const input = selector.querySelector('input.qty');
 
   const changeValue = (value) => {
@@ -101,11 +101,11 @@ const funcQuerySelectorQuantity = (selector) => (isSubmittable) => {
 const formCartItemAction = () => {
   document
     .querySelectorAll('.woocommerce-cart-form__cart-item')
-    .forEach((selector) => funcQuerySelectorQuantity(selector)(false));
+    .forEach((selector) => funcQuerySelectorQuantity(selector));
 };
 document
   .querySelectorAll('form.cart')
-  .forEach((form) => funcQuerySelectorQuantity(form)(true));
+  .forEach((form) => funcQuerySelectorQuantity(form));
 
 const updateCartAddEventListener = () => {
   document.querySelectorAll('button[name="update_cart"]').forEach((button) => {
@@ -120,8 +120,8 @@ const updateCartAddEventListener = () => {
 const updateFragments = () => {
   formCartItemAction();
   updateCartAddEventListener();
-}
-updateFragments()
+};
+updateFragments();
 elementorFrontend.elements.$body.on('wc_fragments_refreshed', () =>
   updateFragments()
 );
