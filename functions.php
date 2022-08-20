@@ -74,4 +74,39 @@ add_action('woocommerce_before_subcategory', function ($category) {
 <?php
 }, 20);
 
-//fonction pour afficher le titre d'un custom post
+
+// Custom conditional function that checks also for parent product categories
+function has_product_category($product_id, $category_ids)
+{
+	$term_ids = array(); // Initializing
+
+	// Loop through the current product category terms to get only parent main category term
+	foreach (get_the_terms($product_id, 'product_cat') as $term) {
+		if ($term->parent > 0) {
+			$term_ids[] = $term->parent; // Set the parent product category
+			$term_ids[] = $term->term_id;
+		} else {
+			$term_ids[] = $term->term_id;
+		}
+	}
+	return array_intersect($category_ids, array_unique($term_ids));
+}
+
+
+add_action('woocommerce_check_cart_items', 'woocommerce_check_cart_quantities');
+function woocommerce_check_cart_quantities()
+{
+	$multiples = 6;
+	$total_products = 0;
+	$category_ids = array(17, 22);
+	$found = false;
+
+	foreach (WC()->cart->get_cart() as $cart_item) {
+		if (has_product_category($cart_item['product_id'], $category_ids)) {
+			$total_products += $cart_item['quantity'];
+			$found = true;
+		}
+	}
+	if (($total_products % $multiples) > 0 && $found)
+		wc_add_notice(sprintf(__('You need to buy in quantities of %s products', 'woocommerce'), $multiples), 'error');
+}
