@@ -4,9 +4,7 @@ add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_produc
 function woocommerce_template_loop_product_subtitle()
 {
     $subtitle = get_field('sous-titre');
-    if ($subtitle) {
-        echo '<div class="subtitle">' . $subtitle . '</div>';
-    }
+    echo '<div class="subtitle">' . $subtitle . '</div>';
 }
 
 

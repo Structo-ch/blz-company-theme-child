@@ -7,12 +7,38 @@ const swiperHeaderHome = {
     wrapperClass: 'elementor-260',
   }
 };
-const swiperProductHome = {
-  swiperContainer: '.disable-elementor-grid .woocommerce',
+const swiperProductSettings = {
   settings: {
     slidesPerView: 3,
+    spaceBetween: 100,
     wrapperClass: 'products',
+    breakpoints: {
+      "@0.00": {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      "@0.75": {
+        slidesPerView: 2,
+        spaceBetween: 60,
+      },
+      "@1.00": {
+        slidesPerView: 3,
+        spaceBetween: 100,
+      },
+      "@1.50": {
+        slidesPerView: 4,
+        spaceBetween: 100,
+      },
+    },
   }
+};
+const swiperProductHome = {
+  swiperContainer: '.disable-elementor-grid.nos-bieres .woocommerce',
+  ...swiperProductSettings,
+};
+const swiperSpiritueuxHome = {
+  swiperContainer: '.disable-elementor-grid.nos-spiritueux .woocommerce',
+  ...swiperProductSettings,
 };
 
 document.querySelectorAll('.disable-elementor-grid .woocommerce li.product').forEach(
@@ -21,9 +47,7 @@ document.querySelectorAll('.disable-elementor-grid .woocommerce li.product').for
   }
 )
 
-
-
-const swipers = [swiperProductHome, swiperHeaderHome];
+const swipers = [swiperHeaderHome, swiperProductHome, swiperSpiritueuxHome];
 
 swipers.forEach((swiper) => {
   const swiperContainer = swiper.swiperContainer;
@@ -59,12 +83,13 @@ swipers.forEach((swiper) => {
         prevEl: `.${buttonsClass.swiperPrev}`,
       },
     
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true,
+      // },
     }
+    console.log('Riko', {...defaultSettings, ...swiper.settings } );
     
     new Swiper(swiperContainer, {...defaultSettings, ...swiper.settings } );
   }

@@ -29,6 +29,14 @@ Screenshot's images & icons are licensed under: Creative Commons (CC0), https://
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Elementor and start building your site.
 
+== Todo ==
+[] add card to the header (2) hard
+[] Create the product page (16) simple with responsive
+[] Create the event page single (3) simple
+[] Create location page (3) simple
+[] Create tireuse page (3) simple
+27
+
 == Customizations ==
 
 Most users will not need to edit the files for customizing this theme.
