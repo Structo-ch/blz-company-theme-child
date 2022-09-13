@@ -15,20 +15,3 @@ add_action('woocommerce_before_subcategory', function ($category) {
     </h2>
 <?php
 }, 20);
-
-// Custom conditional function that checks also for parent product categories
-function has_product_category($product_id, $category_ids)
-{
-    $term_ids = array(); // Initializing
-
-    // Loop through the current product category terms to get only parent main category term
-    foreach (get_the_terms($product_id, 'product_cat') as $term) {
-        if ($term->parent > 0) {
-            $term_ids[] = $term->parent; // Set the parent product category
-            $term_ids[] = $term->term_id;
-        } else {
-            $term_ids[] = $term->term_id;
-        }
-    }
-    return array_intersect($category_ids, array_unique($term_ids));
-}

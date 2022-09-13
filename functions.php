@@ -10,6 +10,16 @@ require_once(dirname(__FILE__) ."/includes/scripts-js-css.php");
 require_once(dirname(__FILE__) ."/includes/elementor-query.php");
 require_once(dirname(__FILE__) ."/includes/categories.php");
 require_once(dirname(__FILE__) ."/includes/single-product.php");
+require_once(dirname(__FILE__) ."/includes/subcategory_archive.php");
+
+function register_list_widget( $widgets_manager ) {
+
+	require_once( __DIR__ . '/includes/widgets/elementor-product-attributes.php' );
+
+	$widgets_manager->register( new \RN_elementor_product_attributes() );
+
+}
+add_action( 'elementor/widgets/register', 'register_list_widget' );
 
 
 function filter_woocommerce_post_class($classes, $product)
