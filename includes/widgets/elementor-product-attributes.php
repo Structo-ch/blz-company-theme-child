@@ -52,11 +52,64 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
         return 'eicon-nav-menu';
     }
 
+    protected function register_controls()
+    {
+
+        $this->start_controls_section(
+            'section_content',
+            [
+                'label' => esc_html__('Style', 'textdomain'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'align',
+            [
+                'label' => esc_html__('Alignment', 'elementor'),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'start' => [
+                        'title' => esc_html__('Left', 'elementor'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__('Center', 'elementor'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'end' => [
+                        'title' => esc_html__('Right', 'elementor'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'space-between' => [
+                        'title' => esc_html__('Justified', 'elementor'),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => '',
+                'selectors' => [
+                    '{{SELECTOR}} .woocommerce-product-attributes.shop_attributes' => 'justify-content: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+
     protected function render()
     {
         global $product;
         if ($product->has_attributes()) {
-            wc_display_product_attributes($product);
+            $settings = $this->get_settings_for_display();
+
+            $style = "--justify-content: ".$settings['align'].";";
+?>
+            <div style="<?php echo $style;?>">
+                <?php
+                wc_display_product_attributes($product);
+                ?>
+            </div>
+<?php
         }
     }
 }
