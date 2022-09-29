@@ -6,20 +6,24 @@
  * @package HelloElementorChild
  */
 
-require_once(dirname(__FILE__) ."/includes/scripts-js-css.php");
-require_once(dirname(__FILE__) ."/includes/elementor-query.php");
-require_once(dirname(__FILE__) ."/includes/categories.php");
-require_once(dirname(__FILE__) ."/includes/single-product.php");
-require_once(dirname(__FILE__) ."/includes/subcategory_archive.php");
+require_once(dirname(__FILE__) . "/includes/scripts-js-css.php");
+require_once(dirname(__FILE__) . "/includes/elementor-query.php");
+require_once(dirname(__FILE__) . "/includes/categories.php");
+require_once(dirname(__FILE__) . "/includes/single-product.php");
+require_once(dirname(__FILE__) . "/includes/subcategory_archive.php");
 
-function register_list_widget( $widgets_manager ) {
+function register_list_widget($widgets_manager)
+{
 
-	require_once( __DIR__ . '/includes/widgets/elementor-product-attributes.php' );
+    require_once(__DIR__ . '/includes/widgets/elementor-product-attributes.php');
+    require_once(__DIR__ . '/includes/widgets/customAddToCart.php');
+    require_once(__DIR__ . '/includes/widgets/elementor-product-playlist.php');
 
-	$widgets_manager->register( new \RN_elementor_product_attributes() );
-
+    $widgets_manager->register(new \RN_elementor_product_attributes());
+    $widgets_manager->register(new \RN_elementor_custom_add_to_cart());
+    $widgets_manager->register(new \RN_elementor_product_playlist());
 }
-add_action( 'elementor/widgets/register', 'register_list_widget' );
+add_action('elementor/widgets/register', 'register_list_widget');
 
 
 function filter_woocommerce_post_class($classes, $product)

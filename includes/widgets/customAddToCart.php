@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class RN_elementor_product_attributes extends \Elementor\Widget_Base
+class RN_elementor_custom_add_to_cart extends \Elementor\Widget_Base
 {
     public function get_categories()
     {
@@ -25,7 +25,7 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'RN_elementor_product_attributes';
+        return 'RN_elementor_custom_add_to_cart';
     }
 
     /**
@@ -37,7 +37,7 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return __('Product attributes', 'elementor-radon');
+        return __('custom add to cart', 'elementor-radon');
     }
 
     /**
@@ -56,10 +56,37 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
     {
 
         $this->start_controls_section(
-            'section_content',
+            'content_section',
             [
-                'label' => esc_html__('Style', 'textdomain'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'label' => esc_html__('Content', 'textdomain'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'size',
+            [
+                'label' => esc_html_x('Size', 'Flex Item Control', 'elementor'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 500,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    'vw' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'size_units' => ['px', '%', 'vw'],
+                'selectors' => [
+                    '{{WRAPPER}} .custom-add-to-cart' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+                'responsive' => true,
             ]
         );
 
@@ -69,19 +96,19 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
                 'label' => esc_html__('Alignment', 'elementor'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
-                    'start' => [
+                    'margin-right:auto' => [
                         'title' => esc_html__('Left', 'elementor'),
                         'icon' => 'eicon-text-align-left',
                     ],
-                    'center' => [
+                    'margin-inline:auto' => [
                         'title' => esc_html__('Center', 'elementor'),
                         'icon' => 'eicon-text-align-center',
                     ],
-                    'end' => [
+                    'margin-left:auto' => [
                         'title' => esc_html__('Right', 'elementor'),
                         'icon' => 'eicon-text-align-right',
                     ],
-                    'space-between' => [
+                    'margin-inline:initial;' => [
                         'title' => esc_html__('Justified', 'elementor'),
                         'icon' => 'eicon-text-align-justify',
                     ],
@@ -95,18 +122,15 @@ class RN_elementor_product_attributes extends \Elementor\Widget_Base
 
     protected function render()
     {
-        global $product;
-        if (!!$product && $product->has_attributes()) {
-            $settings = $this->get_settings_for_display();
+        $settings = $this->get_settings_for_display();
 
-            $style = "--justify-content: " . $settings['align'] . ";";
+        $style = $settings['align'] . ";";
 ?>
-            <div style="<?php echo $style; ?>">
-                <?php
-                wc_display_product_attributes($product);
-                ?>
-            </div>
+        <div class="custom-add-to-cart" style="<?php echo $style; ?>">
+            <?php
+            woocommerce_template_loop_add_to_cart();
+            ?>
+        </div>
 <?php
-        }
     }
 }

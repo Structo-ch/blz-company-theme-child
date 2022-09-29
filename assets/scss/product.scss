@@ -13,7 +13,7 @@ input[type=number] {
 }
 
 .elementor-widget-woocommerce-products .elementor-products-grid ul.products.elementor-grid li.product {
-    border: 4px solid black;
+    border: 4px solid currentcolor;
     border-bottom: none;
 }
 
@@ -24,7 +24,12 @@ input[type=number] {
 }
 
 .product-quantity .quantity {
-    border-inline: 1px solid black;
+    border: 4px solid currentcolor;
+    border-top: none;
+}
+
+.woocommerce-cart-form__cart-item .product-quantity .quantity {
+    border-inline: 4px solid currentcolor;
 }
 
 .quantity {
@@ -41,19 +46,40 @@ input[type=number] {
     justify-content: center;
     align-items: center;
     flex: 1 25%;
-    border: 4px solid black;
+    border: 4px solid currentcolor;
     border-left: 0;
     border-bottom: 0;
 }
 
 .quantity .qty {
     flex: 1 25%;
-    border-top: 4px solid black;
+    border-top: 4px solid currentcolor;
     border-inline: 0;
     border-radius: 0;
     background-color: #F0F0F0;
 }
 
+.woocommerce-cart-form__cart-item .quantity .qty {
+    border-bottom: 0;
+}
+
+.woocommerce div.product .custom-add-to-cart .quantity .qty {
+    background-color: transparent;
+    color: currentColor;
+}
+
+.woocommerce div.product .custom-add-to-cart form.cart div.quantity {
+    margin: 0;
+    border: solid 4px currentcolor;
+    border-top: 0;
+    border-right: 0;
+}
+
+input[type="number"]:focus {
+    border-color: currentcolor;
+}
+
+.custom-add-to-cart .cart-simple-product .button.button.alt,
 .woocommerce ul.products li.product .button {
     margin-top: 0;
     background-color: black;
@@ -64,10 +90,24 @@ input[type=number] {
     border-bottom: 0;
 }
 
+.custom-add-to-cart .cart-simple-product .button.button.alt {
+    background-color: transparent;
+    border: solid 4px currentColor;
+    color: currentColor;
+}
+
+.custom-add-to-cart .cart-simple-product a.added_to_cart,
 .woocommerce ul.products li.product a.added_to_cart {
     flex: 1 1 100%;
-    border-top: 4px solid black;
+    border-top: 4px solid currentcolor;
     color: var(--e-global-color-primary);
+}
+
+.custom-add-to-cart .cart-simple-product a.added_to_cart,
+    {
+    text-align: center;
+    border: 4px solid currentColor;
+    border-top: 0;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
@@ -105,5 +145,9 @@ input[type=number] {
 }
 
 .woocommerce-product-attributes.shop_attributes>.woocommerce-product-attributes-item>p {
+    margin-bottom: 0;
+}
+
+.woocommerce div.product form.cart {
     margin-bottom: 0;
 }
