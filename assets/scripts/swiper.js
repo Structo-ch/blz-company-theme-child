@@ -89,7 +89,6 @@ swipers.forEach((swiper) => {
       //   pauseOnMouseEnter: true,
       // },
     }
-    console.log('Riko', {...defaultSettings, ...swiper.settings } );
     
     new Swiper(swiperContainer, {...defaultSettings, ...swiper.settings } );
   }
