@@ -170,3 +170,17 @@ input[type="number"]:focus {
 .elementor-playlist-sound {
     flex: 1 1 auto;
 }
+
+.elementor-products-grid .related.products ul.products.elementor-grid li.product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.elementor-products-grid .related.products ul.products.elementor-grid li.product a {
+    flex: 1 1 100%;
+}
+
+.woocommerce div.product form.cart div.quantity {
+    margin: 0;
+  }
