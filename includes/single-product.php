@@ -58,4 +58,4 @@ function woocommerce_before_quantity_input_field_action()
 <?php
 }
 
-remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
