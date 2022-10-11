@@ -10,23 +10,28 @@ const swiperHeaderHome = {
 const swiperProductSettings = {
   settings: {
     slidesPerView: 3,
+    slidesPerGroup: 3,
     spaceBetween: 100,
     wrapperClass: 'products',
     breakpoints: {
       "@0.00": {
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 30,
       },
       "@0.75": {
         slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 60,
       },
       "@1.00": {
         slidesPerView: 3,
+        slidesPerGroup: 3,
         spaceBetween: 100,
       },
       "@1.50": {
         slidesPerView: 4,
+        slidesPerGroup: 4,
         spaceBetween: 100,
       },
     },
