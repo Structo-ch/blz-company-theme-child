@@ -157,7 +157,7 @@ class RN_elementor_product_playlist extends \Elementor\Widget_Base
                     'default' => Global_Colors::COLOR_PRIMARY,
                 ],
                 'selectors' => [
-                    '{{SELECTOR}} .elementor-playlist-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elementor-playlist-title' => 'color: {{VALUE}};',
                 ],
             ]
         );

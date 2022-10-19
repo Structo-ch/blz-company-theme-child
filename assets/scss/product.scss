@@ -35,7 +35,7 @@ input[type=number] {
 .quantity {
     display: flex;
     flex-direction: row;
-    flex: 1 75%;
+    flex: 1 1 auto;
 }
 
 .quantity .quantity-button {
@@ -83,7 +83,7 @@ input[type="number"]:focus {
 .woocommerce ul.products li.product .button {
     margin-top: 0;
     background-color: black;
-    flex: 1 25%;
+    flex: 0 1 25%;
     border-top: 4px solid black;
     border-inline: 0;
     border-radius: 0;
@@ -124,7 +124,7 @@ input[type="number"]:focus {
     font-style: var(--e-global-typography-b9e8691-font-style);
     color: var(--e-global-color-primary);
     padding-bottom: .5em;
-    min-height: 1.5em;
+    min-height: 2.5em;
 }
 
 .woocommerce-product-attributes.shop_attributes {
@@ -183,4 +183,8 @@ input[type="number"]:focus {
 
 .woocommerce div.product form.cart div.quantity {
     margin: 0;
+}
+
+.woocommerce ul.products li.product .price {
+    color: var(--e-global-color-f16652e)
 }

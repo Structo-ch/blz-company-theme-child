@@ -75,6 +75,6 @@ const updateFragments = () => {
   updateCartAddEventListener();
 };
 updateFragments();
-elementorFrontend.elements.$body.on('wc_fragments_refreshed', () =>
-  updateFragments()
-);
+elementorFrontend.elements.$body.on('wc_fragments_refreshed', () => {
+  updateFragments();
+});

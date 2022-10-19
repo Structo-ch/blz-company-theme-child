@@ -29,7 +29,7 @@ function woocommerce_template_loop_product_subtitle()
 add_action('woocommerce_check_cart_items', 'woocommerce_check_cart_quantities');
 function woocommerce_check_cart_quantities()
 {
-    $multiples = 6;
+    $multiples = 12;
     $total_products = 0;
     $category_ids = array(17, 22);
     $found = false;
@@ -40,8 +40,15 @@ function woocommerce_check_cart_quantities()
             $found = true;
         }
     }
-    if (($total_products % $multiples) > 0 && $found)
-        wc_add_notice(sprintf(__('You need to buy in quantities of %s products', 'woocommerce'), $multiples), 'error');
+    if (($total_products % $multiples) > 0 && $found) {
+        $missing_product = $multiples - ($total_products % $multiples);
+        wc_add_notice(sprintf('<strong>Attention</strong> : Vous devez commander un multiple de %s produits.', $multiples), 'error');
+        $message = '';
+        while ($missing_product-- > 0) {
+            $message .= 'o';
+        }
+        wc_add_notice(sprintf(__('Il manque %s à ta caisse !'), $message), 'error');
+    }
 }
 
 add_action('woocommerce_before_quantity_input_field', 'woocommerce_before_quantity_input_field_action');
