@@ -42,12 +42,11 @@ function woocommerce_check_cart_quantities()
     }
     if (($total_products % $multiples) > 0 && $found) {
         $missing_product = $multiples - ($total_products % $multiples);
-        wc_add_notice(sprintf('<strong>Attention</strong> : Vous devez commander un multiple de %s produits.', $multiples), 'error');
         $message = '';
         while ($missing_product-- > 0) {
-            $message .= 'o';
+            $message .= '<i aria-hidden="true" class="fas fa-wine-bottle"></i>';
         }
-        wc_add_notice(sprintf(__('Il manque %s à ta caisse !'), $message), 'error');
+        wc_add_notice(sprintf(__('<strong>Attention</strong> : Il manque %s pour remplir ta caisse !'), $message), 'error');
     }
 }
 

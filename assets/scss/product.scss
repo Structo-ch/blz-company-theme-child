@@ -123,8 +123,6 @@ input[type="number"]:focus {
     word-spacing: var(--e-global-typography-b9e8691-word-spacing);
     font-style: var(--e-global-typography-b9e8691-font-style);
     color: var(--e-global-color-primary);
-    padding-bottom: .5em;
-    min-height: 2.5em;
 }
 
 .woocommerce-product-attributes.shop_attributes {
@@ -187,4 +185,10 @@ input[type="number"]:focus {
 
 .woocommerce ul.products li.product .price {
     color: var(--e-global-color-f16652e)
+}
+
+.woocommerce ul.products li.product a .woocommerce-loop-product__title,
+.woocommerce ul.products li.product a .subtitle,
+.woocommerce ul.products li.product a .price {
+    padding: 0 .5em;
 }
