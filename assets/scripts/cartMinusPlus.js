@@ -3,6 +3,10 @@ console.log('Start cartMinusPlus');
 const funcQuerySelectorQuantity = (selector) => {
   const input = selector.querySelector('input.qty');
 
+  if (!input) {
+    return null;
+  }
+
   const changeValue = (value) => {
     input.value = parseInt(input.value) + value;
   };
