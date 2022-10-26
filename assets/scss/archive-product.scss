@@ -25,3 +25,8 @@
     align-content: end;
     flex: 1 1 auto;
 }
+
+.single-product form.cart-simple-product {
+    display: flex;
+    flex-wrap: wrap;
+}

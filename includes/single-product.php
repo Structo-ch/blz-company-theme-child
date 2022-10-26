@@ -47,6 +47,7 @@ function woocommerce_check_cart_quantities()
             $message .= '<i aria-hidden="true" class="fas fa-wine-bottle"></i>';
         }
         wc_add_notice(sprintf(__('<strong>Attention</strong> : Il manque %s pour remplir ta caisse !'), $message), 'error');
+        remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
     }
 }
 
@@ -63,5 +64,3 @@ function woocommerce_before_quantity_input_field_action()
     <div class="quantity-button quantity-up">+</div>
 <?php
 }
-
-// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);

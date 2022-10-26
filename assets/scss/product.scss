@@ -101,6 +101,7 @@ input[type="number"]:focus {
     flex: 1 1 100%;
     border-top: 4px solid currentcolor;
     color: var(--e-global-color-primary);
+    padding-left: 15px;
 }
 
 .custom-add-to-cart .cart-simple-product a.added_to_cart,
@@ -191,4 +192,8 @@ input[type="number"]:focus {
 .woocommerce ul.products li.product a .subtitle,
 .woocommerce ul.products li.product a .price {
     padding: 0 .5em;
+}
+
+.woocommerce div.product.elementor form.cart.cart-simple-product {
+    flex-wrap: wrap !important;
 }
