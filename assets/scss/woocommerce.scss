@@ -1,16 +1,31 @@
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    background-color: black;
-    color: #fff;
-    -webkit-font-smoothing: antialiased;
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: black;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 
-  }
+}
 
-  .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-    border-radius: 0;
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  border-radius: 0;
 
-  }
+}
 
-  .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
-    background-color: var(--swiper-navigation-color);
-    color: #fff;
-  }
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: var(--swiper-navigation-color);
+  color: #fff;
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+  border-radius: 0px;
+}
