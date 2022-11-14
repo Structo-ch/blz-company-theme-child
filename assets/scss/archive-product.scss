@@ -30,3 +30,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.woocommerce ul.products li.product a img {
+    width: fit-content;
+    margin: 0 auto 1em;
+    height: fit-content;
+}
+
+//responsive design
+@media (max-width: 768px) {
+
+    .woocommerce ul.products[class*="columns-"] li.product,
+    .woocommerce-page ul.products[class*="columns-"] li.product {
+        width: 100%
+    }
+}

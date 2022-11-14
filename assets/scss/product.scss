@@ -124,6 +124,7 @@ input[type="number"]:focus {
     word-spacing: var(--e-global-typography-b9e8691-word-spacing);
     font-style: var(--e-global-typography-b9e8691-font-style);
     color: var(--e-global-color-primary);
+    height: 3em;
 }
 
 .woocommerce-product-attributes.shop_attributes {
@@ -133,6 +134,7 @@ input[type="number"]:focus {
     display: flex;
     gap: .5em;
     justify-content: var(--justify-content);
+    flex-wrap: wrap;
 }
 
 .woocommerce-product-attributes.shop_attributes>.woocommerce-product-attributes-item {

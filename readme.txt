@@ -30,12 +30,57 @@ Screenshot's images & icons are licensed under: Creative Commons (CC0), https://
 4. Navigate to Elementor and start building your site.
 
 == Todo ==
-[] add card to the header (2) hard
-[] Create the product page (16) simple with responsive
-[] Create the event page single (3) simple
-[] Create location page (3) simple
-[] Create tireuse page (3) simple
-27
+[] J'ai besoin d'images pour les différentes pages
+    home page
+        visite de dégustations
+        location de tireuse (si cela ne va pas pour vous)
+[] Est-ce que vous avez des emails pour les services suivant :
+    Réservation de tireuse
+    Réservation de dégustations
+    Commandes
+    Contact
+    autres...
+[] Formulaire de visite dégustations
+    J'aurai besoin du texte à mettre dans l'e-mail pour dire aux personnes que vous allez les recontacter
+[] Formulaire de location de tireuses
+    J'aurai besoin du texte à mettre dans l'e-mail pour dire aux personnes que vous allez les recontacter
+[] Détail pour les visites dégustations
+    https://dev.blz-company.ch/visites-degustations/
+    J'aurai besoin de photo pour cette page
+    Est-ce que vous avez une liste de prix, conditions etc...
+
+[] Détail pour les locations de tireuses
+    https://dev.blz-company.ch/location-de-tireuse/
+    C'est les informations que j'ai reçu, est-ce que tu veux ajouter d'autres informations ?
+    Il me faudrait des images pour cette page
+    Est-ce que tu peux me dire quelles sont les bières que vous avez en fûts
+[] page La brasserie
+    https://dev.blz-company.ch/la-brasserie/
+    Il me faudrait des images a mettre sur le site
+[] page Contact
+    https://dev.blz-company.ch/contact/
+    Est-ce que l'on ajout les informations concernant l'ouverture du magasin ? si oui est-ce que tu peux me les donner ?
+[] page blog
+    Est-ce que tu aurais déjà des articles de blog ?
+[]  page event
+    Est-ce que vous avez des events de prévu prochainement ?
+[] J'aurai besoin des contenus (textuel) pour les pages suivantes
+    Page Conditions générales de vente 
+        https://dev.blz-company.ch/conditions-generales-de-vente/
+    Page Politique de confidentialité
+        https://dev.blz-company.ch/politique-de-confidentialite/
+    Page Remboursements et retours
+        https://dev.blz-company.ch/remboursements_retours/
+
+
+
+
+[] design page produit autre
+[] design page blog
+[] page produit disponible en futs
+[] Remboursements et retours
+[] politique de confidentialité
+[] Conditions générales de vente 
 
 == Customizations ==
 

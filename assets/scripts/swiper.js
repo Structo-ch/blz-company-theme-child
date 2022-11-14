@@ -24,6 +24,11 @@ const swiperProductSettings = {
         spaceBetween: 50,
       },
       '@1.00': {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50,
+      },
+      '@1.25': {
         slidesPerView: 4,
         slidesPerGroup: 4,
         spaceBetween: 50,

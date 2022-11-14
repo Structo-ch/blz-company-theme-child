@@ -5,7 +5,6 @@
   background-color: black;
   color: #fff;
   -webkit-font-smoothing: antialiased;
-
 }
 
 .woocommerce #respond input#submit,
@@ -13,7 +12,6 @@
 .woocommerce button.button,
 .woocommerce input.button {
   border-radius: 0;
-
 }
 
 .woocommerce #respond input#submit.alt:hover,
@@ -36,4 +34,13 @@
 
 .woocommerce table.shop_table {
   border-radius: 0px;
+}
+
+.woocommerce-page .page-header,
+.woocommerce-page .woocommerce-products-header {
+  margin: 75px 0;
+}
+
+#content {
+  min-height: 50vh;
 }
