@@ -31,7 +31,7 @@ function woocommerce_check_cart_quantities()
 {
     $multiples = 12;
     $total_products = 0;
-    $category_ids = array(17, 22);
+    $category_ids = array(17);
     $found = false;
 
     foreach (WC()->cart->get_cart() as $cart_item) {

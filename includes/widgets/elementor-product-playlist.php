@@ -220,7 +220,10 @@ class RN_elementor_product_playlist extends \Elementor\Widget_Base
                         the_row();
                         $titre = get_sub_field('titre');
                         $url = get_sub_field('url');
-                    ?> <a class="elementor-playlist-sound" href="<?php echo $url; ?>" target="_blank"><?php echo $titre; ?></a>
+                    ?>
+                        <a class="elementor-playlist-sound" href="<?php echo $url; ?>" target="_blank">
+                            <?php echo $titre; ?>
+                        </a>
                     <?php
                     }
                     ?>
