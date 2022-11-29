@@ -204,19 +204,17 @@ class RN_elementor_product_playlist extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        if ('' === $settings['title']) {
-            return;
-        }
+        $subtitle = isset($settings['title']) ? $settings['title'] : 'Playlist';
 
+        $ori_id = apply_filters('wpml_object_id', get_the_ID(), 'product', true, 'fr');
 
-
-        if (have_rows('playlist')) {
+        if (have_rows('playlist', $ori_id)) {
 ?>
             <div class="elementor-playlist-container">
-                <h4 class="elementor-playlist-title"><?php echo $settings['title']; ?></h4>
+                <h4 class="elementor-playlist-title"><?php echo $subtitle; ?></h4>
                 <div class="elementor-playlist-item-content">
                     <?php
-                    while (have_rows('playlist')) {
+                    while (have_rows('playlist', $ori_id)) {
                         the_row();
                         $titre = get_sub_field('titre');
                         $url = get_sub_field('url');
