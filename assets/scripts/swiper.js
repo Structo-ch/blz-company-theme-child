@@ -7,6 +7,7 @@ const swiperHeaderHome = {
     wrapperClass: 'elementor-260',
   },
 };
+
 const swiperProductSettings = {
   settings: {
     slidesPerView: 5,
@@ -99,6 +100,9 @@ swipers.forEach((swiper) => {
       // },
     };
 
-    new Swiper(swiperContainer, { ...defaultSettings, ...swiper.settings });
+    new Swiper(swiperContainer, {
+      ...defaultSettings,
+      ...swiper.settings
+    });
   }
 });

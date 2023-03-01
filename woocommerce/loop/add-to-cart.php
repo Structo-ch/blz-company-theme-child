@@ -17,7 +17,7 @@ if ($product->get_price() === '' && $product->product_type != 'external') return
 
 <?php if (!$product->is_in_stock()) : ?>
 
-    <a href="<?php echo get_permalink($product->id); ?>" class="button"><?php echo apply_filters('out_of_stock_add_to_cart_text', __('Read More', 'woocommerce')); ?></a>
+    <a href="<?php echo get_permalink($product->id); ?>" class="button out_of_stock"><?php echo apply_filters('out_of_stock_add_to_cart_text', __('Out of stock', 'woocommerce')); ?></a>
 
 <?php else : ?>
 

@@ -11,6 +11,7 @@ require_once(dirname(__FILE__) . "/includes/elementor-query.php");
 require_once(dirname(__FILE__) . "/includes/categories.php");
 require_once(dirname(__FILE__) . "/includes/single-product.php");
 require_once(dirname(__FILE__) . "/includes/subcategory_archive.php");
+require_once(dirname(__FILE__) . "/includes/google-analytics.php");
 
 function register_list_widget($widgets_manager)
 {
