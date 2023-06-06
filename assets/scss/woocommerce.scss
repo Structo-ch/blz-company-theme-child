@@ -44,3 +44,16 @@
 #content {
   min-height: 50vh;
 }
+
+.variations_form .woocommerce-variation-add-to-cart .quantity {
+  border-left: solid 4px;
+}
+
+.variations_form .woocommerce-variation-add-to-cart .quantity-button,
+.variations_form .woocommerce-variation-add-to-cart .qty {
+  border-bottom: solid 4px;
+}
+
+.variations_form table tbody > tr:nth-child(2n+1) > td, table tbody > tr:nth-child(2n+1) > th {
+  background-color: initial;
+}
