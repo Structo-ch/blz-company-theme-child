@@ -56,7 +56,10 @@ if ($product->get_price() === '' && $product->product_type != 'external') return
         </form>
     <?php
 
-    } else {
+    } elseif ($product->product_type == 'variable') {
+        printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s"><div class=""><i aria-hidden="true" class="fas fa-shopping-cart"></i></div></a>', $link, $product->id, $product->product_type);
+    } 
+    else {
 
         printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', $link, $product->id, $product->product_type, $label);
     }

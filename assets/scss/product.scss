@@ -90,6 +90,17 @@ input[type="number"]:focus {
     border-bottom: 0;
 }
 
+.woocommerce ul.products li.product .button.product_type_variable div {
+    color: white;
+    text-align: center;
+}
+
+.woocommerce ul.products li.product .button.product_type_variable {
+    margin-top: 25px;
+}
+
+
+
 .custom-add-to-cart .cart-simple-product .button.button.alt {
     background-color: transparent;
     border: solid 4px currentColor;
